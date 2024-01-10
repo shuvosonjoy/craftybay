@@ -15,8 +15,13 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Center(
         child: Column(
           children: [
-            Spacer(),
+            const Spacer(),
             Image.asset(AssetsPath.logo,width: 90,),
+            const Spacer(),
+            const CircularProgressIndicator(),
+            const SizedBox(height: 8,),
+            const Text('Version 1.0'),
+            const SizedBox(height: 8,),
           ],
         )
       ),
