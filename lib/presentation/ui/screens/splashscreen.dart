@@ -1,5 +1,7 @@
+import 'package:craftybay/presentation/ui/screens/verify_email_screen.dart';
 import 'package:craftybay/presentation/ui/utility/assets_path.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -9,6 +11,18 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
+  void initState() {
+    super.initState();
+    moveToNextScreen();
+  }
+
+  void moveToNextScreen() async {
+    await Future.delayed(const Duration(seconds: 2),);
+    Get.offAll(()=> const VerifyEmailScreen());
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
