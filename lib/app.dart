@@ -1,5 +1,5 @@
 import 'package:craftybay/presentation/ui/screens/splashscreen.dart';
-import 'package:craftybay/presentation/ui/utility/appcolor.dart';
+import 'package:craftybay/presentation/ui/utility/app_theme_data.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,17 +9,8 @@ class craftyBay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      theme: ThemeData(
-        primarySwatch: MaterialColor(
-          AppColors.primaryColor.value,
-          AppColors.colorSwatch,
-        ),
-        progressIndicatorTheme: const ProgressIndicatorThemeData(
-          color: AppColors.primaryColor,
-        ),
-
-      ),
-      home: SplashScreen(),
+      theme: AppThemedata.lightThemeData,
+      home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
