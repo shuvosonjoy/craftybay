@@ -121,13 +121,13 @@ class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
                 height: 24,
               ),
               RichText(
-                text:  TextSpan(
-                  style: TextStyle(color: Colors.grey),
+                text: TextSpan(
+                  style: const TextStyle(color: Colors.grey),
                   children: [
-                    TextSpan(text: 'This code will expired in '),
+                    const TextSpan(text: 'This code will expired in '),
                     TextSpan(
                       text: '$timerSeconds s',
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: AppColors.primaryColor,
                           fontWeight: FontWeight.w600),
                     ),
