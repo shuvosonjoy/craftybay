@@ -1,5 +1,7 @@
+import 'package:craftybay/presentation/ui/screens/verify_otp_screen.dart';
 import 'package:craftybay/presentation/ui/widgets/app_logo.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class VerifyEmailScreen extends StatelessWidget {
   const VerifyEmailScreen({super.key});
@@ -12,10 +14,10 @@ class VerifyEmailScreen extends StatelessWidget {
           padding: const EdgeInsets.all(24.0),
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 160,
               ),
-              AppLogo(
+              const AppLogo(
                 height: 90,
               ),
               const SizedBox(
@@ -36,14 +38,22 @@ class VerifyEmailScreen extends StatelessWidget {
                 height: 16,
               ),
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: 'Email',
                 ),
               ),
-              SizedBox(height: 24,),
+              const SizedBox(
+                height: 24,
+              ),
               SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(onPressed: (){}, child: Text('Next'),)),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                   Get.to(()=>const VerifyOTPScreen());
+                  },
+                  child: const Text('Next'),
+                ),
+              ),
             ],
           ),
         ),
