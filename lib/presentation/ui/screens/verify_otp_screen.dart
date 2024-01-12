@@ -1,8 +1,10 @@
 import 'dart:async';
 
+import 'package:craftybay/presentation/ui/screens/complete_profile_screen.dart';
 import 'package:craftybay/presentation/ui/utility/appcolor.dart';
 import 'package:craftybay/presentation/ui/widgets/app_logo.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class VerifyOTPScreen extends StatefulWidget {
@@ -59,7 +61,7 @@ class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
           child: Column(
             children: [
               const SizedBox(
-                height: 160,
+                height: 120,
               ),
               const AppLogo(
                 height: 90,
@@ -113,7 +115,9 @@ class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.to(()=>const CompleteProfileScreen());
+                  },
                   child: const Text('Next'),
                 ),
               ),
