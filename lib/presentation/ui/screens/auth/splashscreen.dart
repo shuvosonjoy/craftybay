@@ -1,4 +1,5 @@
-import 'package:craftybay/presentation/ui/screens/verify_email_screen.dart';
+
+import 'package:craftybay/presentation/ui/screens/auth/verify_email_screen.dart';
 import 'package:craftybay/presentation/ui/utility/assets_path.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

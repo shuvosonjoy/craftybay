@@ -1,4 +1,5 @@
-import 'package:craftybay/presentation/ui/screens/verify_otp_screen.dart';
+import 'package:craftybay/presentation/ui/screens/auth/verify_otp_screen.dart';
+import 'package:craftybay/presentation/ui/screens/main_bottom_nav_screen.dart';
 import 'package:craftybay/presentation/ui/widgets/app_logo.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -94,7 +95,7 @@ class CompleteProfileScreen extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                   Get.to(()=>const VerifyOTPScreen());
+                   Get.to(()=>const MainBottomNavScreen());
                   },
                   child: const Text('Complete'),
                 ),

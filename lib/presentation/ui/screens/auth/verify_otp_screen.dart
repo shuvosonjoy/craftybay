@@ -1,6 +1,5 @@
 import 'dart:async';
-
-import 'package:craftybay/presentation/ui/screens/complete_profile_screen.dart';
+import 'package:craftybay/presentation/ui/screens/auth/complete_profile_screen.dart';
 import 'package:craftybay/presentation/ui/utility/appcolor.dart';
 import 'package:craftybay/presentation/ui/widgets/app_logo.dart';
 import 'package:flutter/material.dart';
