@@ -1,4 +1,3 @@
-import 'package:craftybay/presentation/ui/screens/auth/verify_otp_screen.dart';
 import 'package:craftybay/presentation/ui/screens/main_bottom_nav_screen.dart';
 import 'package:craftybay/presentation/ui/widgets/app_logo.dart';
 import 'package:flutter/material.dart';
