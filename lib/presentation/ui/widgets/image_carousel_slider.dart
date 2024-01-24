@@ -37,7 +37,7 @@ class _ImageCarouselWidgetState extends State<ImageCarouselWidget> {
                     width: MediaQuery.of(context).size.width,
                     margin: EdgeInsets.symmetric(horizontal: 5.0),
                     decoration: BoxDecoration(
-                      color: Colors.amber,
+                      color: AppColors.primaryColor,
                       borderRadius: BorderRadius.circular(8),
                     ),
                     alignment:Alignment.center,
@@ -56,11 +56,11 @@ class _ImageCarouselWidgetState extends State<ImageCarouselWidget> {
                 for(int i=0;i<5;i++)
                   Container(
                     margin: EdgeInsets.all(4),
-                    height: 14,width: 14,
+                    height: 12,width: 12,
                     decoration: BoxDecoration(
-                      color: i==index ? AppColors.primaryColor: Colors.white,
+                      color: i==index ? AppColors.primaryColor: Colors.transparent,
                       border: Border.all(
-                        color: i==index ? AppColors.primaryColor: Colors.grey,
+                        color: i==index ? AppColors.primaryColor: Colors.grey.shade400,
                       ),
                       borderRadius: BorderRadius.circular(20),
                     ),
