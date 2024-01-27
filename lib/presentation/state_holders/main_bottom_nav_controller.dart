@@ -13,7 +13,7 @@ class MainBottomNavController extends GetxController{
     update();
   }
 
-  void backToHome(int index){
+  void backToHome(){
     changedIndex(0);
   }
 
