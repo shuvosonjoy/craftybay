@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 class CatagorieItem extends StatelessWidget {
   const CatagorieItem({
     super.key,
-    required this.title,
+
   });
-  final String title;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -24,7 +24,7 @@ class CatagorieItem extends StatelessWidget {
           ),
         ),
         Text(
-          title,
+          'Electronics' ?? '',
           style: TextStyle(
               color: AppColors.primaryColor,
               fontSize: 16,
