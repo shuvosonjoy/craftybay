@@ -1,4 +1,5 @@
 import 'package:craftybay/presentation/state_holders/main_bottom_nav_controller.dart';
+import 'package:craftybay/presentation/ui/screens/product_list_screen.dart';
 import 'package:craftybay/presentation/ui/utility/assets_path.dart';
 import 'package:craftybay/presentation/ui/widgets/catagory_items.dart';
 import 'package:craftybay/presentation/ui/widgets/home/circle_icon_button.dart';
@@ -41,7 +42,9 @@ class _HomeScreenState extends State<HomeScreen> {
               catagoryLIst,
               SectionTitle(
                 title: 'Popular',
-                ontapSeeAll: () {},
+                ontapSeeAll: () {
+                  Get.to(()=> const ProductListScreen());
+                },
               ),
               productList,
               const SizedBox(height: 8),

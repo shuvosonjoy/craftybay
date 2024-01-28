@@ -26,10 +26,7 @@ class _CatagoriesScreenState extends State<CatagoriesScreen> {
                 Get.find<MainBottomNavController>().backToHome();
               }),
           title: Text(
-            'Catagorie Screen',
-            style: TextStyle(
-              fontSize: 18,
-            ),
+            'Catagory',
           ),
         ),
         body: Padding(

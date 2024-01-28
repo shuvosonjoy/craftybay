@@ -15,7 +15,7 @@ class _WishListScreenState extends State<WishListScreen> {
   Widget build(BuildContext context) {
     return PopScope(
       canPop: false,
-      onPopInvoked: (value){
+      onPopInvoked: (value) {
         Get.find<MainBottomNavController>().backToHome();
       },
       child: Scaffold(
@@ -25,24 +25,21 @@ class _WishListScreenState extends State<WishListScreen> {
               onPressed: () {
                 Get.find<MainBottomNavController>().backToHome();
               }),
-          title: Text(
+          title: const Text(
             'Wish List',
-            style: TextStyle(
-              fontSize: 18,
-            ),
           ),
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: GridView.builder(
               itemCount: 100,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3,
                   mainAxisSpacing: 8,
                   crossAxisSpacing: 4,
                   childAspectRatio: 0.90),
               itemBuilder: (context, index) {
-                return FittedBox(
+                return const FittedBox(
                   child: ProductCardItem(),
                 );
               }),
@@ -50,5 +47,4 @@ class _WishListScreenState extends State<WishListScreen> {
       ),
     );
   }
-  }
-
+}
