@@ -1,8 +1,9 @@
 import 'package:craftybay/presentation/state_holders/main_bottom_nav_controller.dart';
 import 'package:craftybay/presentation/ui/utility/appcolor.dart';
-import 'package:craftybay/presentation/ui/utility/assets_path.dart';
+import 'package:craftybay/presentation/ui/widgets/carts/cart_product_items.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -32,41 +33,15 @@ class _CartScreenState extends State<CartScreen> {
         body: Column(
           children: [
             Expanded(
-              child: Column(
-                children: [
-                  Card(
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          AssetsPath.dummyShoeJpg,
-                          width: 100,
-                        ),
-                        Expanded(
-                          child: Row(
-                            children: [
-                              const Expanded(
-                                child: Column(
-                                  children: [
-                                    Text('Nike shoe 1234 2021 Edition'),
-                                    Row(children: [
-                                      Text('10000'),
-                                    ],)
-                                  ],
-                                ),
-                              ),
-                              IconButton(
-                                onPressed: () {},
-                                icon: const Icon(Icons.delete_forever_outlined),
-                              )
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  )
-                ],
+                child: ListView.separated(
+              itemCount: 5,
+              itemBuilder: (context, index) {
+                return CardProductItems();
+              },
+              separatorBuilder: (_, __) => SizedBox(
+                height: 8,
               ),
-            ),
+            )),
             totalPriceAndCheckSection,
           ],
         ),
@@ -98,7 +73,7 @@ class _CartScreenState extends State<CartScreen> {
                 ),
               ),
               Text(
-                '12000',
+                '\$12000',
                 style: TextStyle(
                   fontSize: 18,
                   color: AppColors.primaryColor,
@@ -119,3 +94,5 @@ class _CartScreenState extends State<CartScreen> {
     );
   }
 }
+
+
