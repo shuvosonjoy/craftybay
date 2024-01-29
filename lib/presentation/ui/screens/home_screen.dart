@@ -4,7 +4,7 @@ import 'package:craftybay/presentation/ui/utility/assets_path.dart';
 import 'package:craftybay/presentation/ui/widgets/catagory_items.dart';
 import 'package:craftybay/presentation/ui/widgets/home/circle_icon_button.dart';
 import 'package:craftybay/presentation/ui/widgets/home/section_title.dart';
-import 'package:craftybay/presentation/ui/widgets/image_carousel_slider.dart';
+import 'package:craftybay/presentation/ui/widgets/home/image_carousel_slider.dart';
 import 'package:craftybay/presentation/ui/widgets/product_card_item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
