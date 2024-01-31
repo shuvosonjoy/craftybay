@@ -3,7 +3,6 @@ import 'package:craftybay/presentation/ui/widgets/product_details/product_carous
 import 'package:flutter/material.dart';
 import 'package:item_count_number_button/item_count_number_button.dart';
 
-
 class ProductDetailsScreen extends StatefulWidget {
   const ProductDetailsScreen({super.key});
 
@@ -16,92 +15,104 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     appBar: AppBar(
-       title: Text('Product Details'),
-     ),
-      body: Column(
-        children: [
-          Expanded(
-            child: Column(
-            //  crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ProductImageCarousel(),
-                Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Expanded(child: Text('Nike Sports Shoe 2024 Edition - save 30%',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 18,
-                          ),
-                          ),),
-                          ValueListenableBuilder(
-                            valueListenable: noOfItems,
-                            builder: (context, value, _) {
-                              return ItemCount(
-                                initialValue: value,
-                                minValue: 1,
-                                maxValue: 10,
-                                decimalPlaces: 0,
-                                step: 1,
-                                color: AppColors.primaryColor,
-                                onChanged: (v) {
-                                  noOfItems.value = v.toInt();
-                                },
-                              );
-                            },
-                          ),
-
-                        ],
-                      ),
-                      Row(
-                          children:[
-
-
-                            Wrap(
-                                crossAxisAlignment: WrapCrossAlignment.center,
-                                children:[
-                                  Icon(Icons.star,size: 14,color: Colors.amber,),
-                                  Text('4.4',style: TextStyle(
-                                      fontSize: 12,
-                                      color: Colors.black54
-                                  ),),
-                                ]
+        appBar: AppBar(
+          title: Text('Product Details'),
+        ),
+        body: Column(
+          children: [
+            Expanded(
+              child: Column(
+                //  crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ProductImageCarousel(),
+                  Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Text(
+                                'Nike Sports Shoe 2024 Edition - save 30%',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 18,
+                                ),
+                              ),
                             ),
-                            SizedBox(width: 8,),
-                            Text('Reviews',style: TextStyle(
+                            ValueListenableBuilder(
+                              valueListenable: noOfItems,
+                              builder: (context, value, _) {
+                                return ItemCount(
+                                  initialValue: value,
+                                  minValue: 1,
+                                  maxValue: 10,
+                                  decimalPlaces: 0,
+                                  step: 1,
+                                  color: AppColors.primaryColor,
+                                  onChanged: (v) {
+                                    noOfItems.value = v.toInt();
+                                  },
+                                );
+                              },
+                            ),
+                          ],
+                        ),
+                        Row(children: [
+                          Wrap(
+                              crossAxisAlignment: WrapCrossAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.star,
+                                  size: 14,
+                                  color: Colors.amber,
+                                ),
+                                Text(
+                                  '4.4',
+                                  style: TextStyle(
+                                      fontSize: 12, color: Colors.black54),
+                                ),
+                              ]),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          Text(
+                            'Reviews',
+                            style: TextStyle(
                               color: AppColors.primaryColor,
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
-                            ),),  SizedBox(width: 10,),
-                            Card(
-                              color: AppColors.primaryColor,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Card(
+                            color: AppColors.primaryColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(4),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(2.0),
+                              child: Icon(
+                                Icons.favorite_border_rounded,
+                                size: 10,
+                                color: Colors.white,
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(2.0),
-                                child: Icon(Icons.favorite_border_rounded,size: 10,color: Colors.white,),
-                              ),
-                            )
-                          ]
-                      ),
-
-                    ],
-                  ),
-                )
-              ],
+                            ),
+                          )
+                        ]),
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
-          ),
-          priceAndAddToCartSection,
-
-        ],
-      )
-    );
+            priceAndAddToCartSection,
+          ],
+        ));
   }
+
   Container get priceAndAddToCartSection {
     return Container(
       padding: const EdgeInsets.all(16),
@@ -146,8 +157,4 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
       ),
     );
   }
-
-
 }
-
-
