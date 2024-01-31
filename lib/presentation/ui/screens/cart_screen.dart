@@ -42,14 +42,14 @@ class _CartScreenState extends State<CartScreen> {
                 height: 8,
               ),
             )),
-            totalPriceAndCheckSection,
+            totalPriceAndCheckourSection,
           ],
         ),
       ),
     );
   }
 
-  Container get totalPriceAndCheckSection {
+  Container get totalPriceAndCheckourSection {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
