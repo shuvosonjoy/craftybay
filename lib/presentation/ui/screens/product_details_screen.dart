@@ -1,5 +1,7 @@
 import 'package:craftybay/presentation/ui/utility/appcolor.dart';
+import 'package:craftybay/presentation/ui/widgets/product_details/color_selector.dart';
 import 'package:craftybay/presentation/ui/widgets/product_details/product_carousel_slider.dart';
+import 'package:craftybay/presentation/ui/widgets/product_details/size_selector.dart';
 import 'package:flutter/material.dart';
 import 'package:item_count_number_button/item_count_number_button.dart';
 
@@ -206,110 +208,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
     );
   }
 }
-class ColorSelector extends StatefulWidget {
-  const ColorSelector({super.key, required this.colors, required this.onChange});
-  final List<Color> colors;
-  final Function(Color) onChange;
-
-  @override
-  State<ColorSelector> createState() => _ColorSelectorState();
-}
-
-class _ColorSelectorState extends State<ColorSelector> {
-  late Color _selectedColor ;
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    _selectedColor=widget.colors.first;
-
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return  Row(
-        children: widget.colors
-            .map((c) => Padding(
-          padding: const EdgeInsets.all(4.0),
-          child: InkWell(
-            borderRadius: BorderRadius.circular(15),
-            onTap: () {
-              _selectedColor = c;
-              widget.onChange(c);
-              if (mounted) {
-                setState(() {});
-              }
-            },
-            child: CircleAvatar(
-              backgroundColor: c,
-              radius: 15,
-              child: _selectedColor == c
-                  ? Icon(
-                Icons.done,
-                color: Colors.white,
-              )
-                  : null,
-            ),
-          ),
-        ))
-            .toList());
-  }
-}
 
 
 
 
-class SizeSelector extends StatefulWidget {
-  const SizeSelector({super.key, required this.sizes, required this.onChange});
-  final List<String> sizes;
-  final Function(String) onChange;
-
-  @override
-  State<SizeSelector> createState() => _SizeSelectorState();
-}
-
-class _SizeSelectorState extends State<SizeSelector> {
-  late String _selectedSize ;
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    _selectedSize=widget.sizes.first;
-
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return  Row(
-        children: widget.sizes
-            .map((c) => Padding(
-          padding: const EdgeInsets.all(4.0),
-          child: InkWell(
-            borderRadius: BorderRadius.circular(15),
-            onTap: () {
-              _selectedSize = c;
-              widget.onChange(c);
-              if (mounted) {
-                setState(() {});
-              }
-            },
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 12,vertical: 8),
-              margin: EdgeInsets.only(right: 8),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                border: Border.all(color: Colors.grey),
-                color: _selectedSize ==c ? AppColors.primaryColor : null,
-              ),
-              child: Text(c,style: TextStyle(
-                color: _selectedSize == c ? Colors.white : Colors.grey
-              ),)
-
-            ),
-          ),
-        ))
-            .toList());
-  }
-}
