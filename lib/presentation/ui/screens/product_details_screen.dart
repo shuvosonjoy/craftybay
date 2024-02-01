@@ -27,7 +27,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Product Details'),
+          title: const Text('Product Details'),
         ),
         body: Column(
           children: [
@@ -35,7 +35,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               child: SingleChildScrollView(
                 child: Column(
                   //  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [ProductImageCarousel(), productDetailsBody],
+                  children: [const ProductImageCarousel(), productDetailsBody],
                 ),
               ),
             ),
@@ -52,7 +52,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
         children: [
           Row(
             children: [
-              Expanded(
+              const Expanded(
                 child: Text(
                   'Nike Sports Shoe 2024 Edition - save 30%',
                   style: TextStyle(
@@ -79,14 +79,14 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           reviewAndRating,
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
-          Text(
+          const Text(
             'Colors',
             style: TextStyle(
               fontSize: 16,
@@ -98,10 +98,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               onChange: (selectedColor) {
                 _selectedColor = selectedColor;
               }),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
-          Text(
+          const Text(
             'Size',
             style: TextStyle(
               fontSize: 16,
@@ -109,20 +109,20 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
             ),
           ),
           SizeSelector(sizes: sizes, onChange: (s) {}),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
-          Text(
+          const Text(
             'Description',
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w500,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
-          Text(
+          const Text(
             'Introducing the epitome of style and comfort, our cutting-edge shoes seamlessly blend fashion and function. Crafted with precision and passion, each pair reflects a perfect synergy of form and substance. Immerse yourself in unparalleled luxury as you step into a world where every detail is meticulously designed. From the plush insoles to the durable outsoles, our shoes redefine sophistication. Elevate your stride with innovative materials that embrace your feet in a gentle embrace. Whether you\'re navigating city streets or dancing under starlit skies, these shoes are more than footwear—they\'re an expression of your unique journey. Walk confidently, embracing a fusion of elegance and resilience.',
             style: TextStyle(
               color: Colors.grey,
@@ -137,7 +137,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   Row get reviewAndRating {
     return Row(
           children: [
-            Wrap(crossAxisAlignment: WrapCrossAlignment.center, children: [
+            const Wrap(crossAxisAlignment: WrapCrossAlignment.center, children: [
               Icon(
                 Icons.star,
                 size: 18,
@@ -151,10 +151,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 style: TextStyle(fontSize: 16, color: Colors.black54),
               ),
             ]),
-            SizedBox(
+            const SizedBox(
               width: 8,
             ),
-            Text(
+            const Text(
               'Reviews',
               style: TextStyle(
                 color: AppColors.primaryColor,
@@ -162,7 +162,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 8,
             ),
             Card(
@@ -170,8 +170,8 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(4),
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(4.0),
+              child: const Padding(
+                padding: EdgeInsets.all(4.0),
                 child: Icon(
                   Icons.favorite_border_rounded,
                   size: 18,
