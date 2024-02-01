@@ -64,7 +64,7 @@ class AppThemedata {
       foregroundColor: AppColors.primaryColor,
       ),
     ),
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       color: Colors.white,
       titleTextStyle: TextStyle(color: Colors.black,fontSize: 18),
       elevation: 5,
