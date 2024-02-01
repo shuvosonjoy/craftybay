@@ -25,7 +25,7 @@ class _CatagoriesScreenState extends State<CatagoriesScreen> {
               onPressed: () {
                 Get.find<MainBottomNavController>().backToHome();
               }),
-          title: Text(
+          title: const Text(
             'Catagory',
           ),
         ),
@@ -33,13 +33,13 @@ class _CatagoriesScreenState extends State<CatagoriesScreen> {
           padding: const EdgeInsets.all(8.0),
           child: GridView.builder(
             itemCount: 100,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 4,
                   mainAxisSpacing: 12,
                   crossAxisSpacing: 8,
                   childAspectRatio: 0.95),
               itemBuilder: (context, index) {
-                return FittedBox(
+                return const FittedBox(
                   child: CatagorieItem(),
                 );
               }),
