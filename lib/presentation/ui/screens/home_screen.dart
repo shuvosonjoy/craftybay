@@ -75,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
         primary: false,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return CatagorieItem();
+          return const CatagorieItem();
         },
         separatorBuilder: (BuildContext context, int index) {
           return const SizedBox(

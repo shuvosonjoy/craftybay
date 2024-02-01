@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 class SendEmailOtpController extends GetxController {
   bool _inProgress = false;
-  String _errorMessage = '';
+  String _errorMessage = '' ;
   bool get inProgress => _inProgress;
   String get errorMessage => _errorMessage;
 
