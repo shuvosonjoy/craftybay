@@ -3,8 +3,15 @@ import 'package:craftybay/presentation/ui/widgets/app_logo.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class VerifyEmailScreen extends StatelessWidget {
+class VerifyEmailScreen extends StatefulWidget {
   const VerifyEmailScreen({super.key});
+
+  @override
+  State<VerifyEmailScreen> createState() => _VerifyEmailScreenState();
+}
+
+class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
+  TextEditingController _emailTEController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -38,9 +45,14 @@ class VerifyEmailScreen extends StatelessWidget {
                 height: 16,
               ),
               TextFormField(
+                controller: _emailTEController,
                 decoration: const InputDecoration(
                   hintText: 'Email',
-                ),
+                ),validator: (value){
+                  if(value?.isEmpty?? true){
+                    return 'Enter an Email';
+                  }
+              },
               ),
               const SizedBox(
                 height: 24,
