@@ -1,7 +1,7 @@
 class ResponseData {
   final bool isSuccess;
   final int statusCode;
-  final String? errorMessage;
+  final String errorMessage;
   final dynamic responseData;
 
   ResponseData({
