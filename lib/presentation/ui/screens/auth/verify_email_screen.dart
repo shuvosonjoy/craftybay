@@ -12,6 +12,7 @@ class VerifyEmailScreen extends StatefulWidget {
 
 class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
   TextEditingController _emailTEController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -19,54 +20,71 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 160,
-              ),
-              const AppLogo(
-                height: 90,
-              ),
-              const SizedBox(
-                height: 24,
-              ),
-              Text(
-                'Welcome back',
-                style: Theme.of(context).textTheme.titleLarge,
-              ),
-              const SizedBox(
-                height: 4,
-              ),
-              Text(
-                'Please Enter your Email Address',
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
-              const SizedBox(
-                height: 16,
-              ),
-              TextFormField(
-                controller: _emailTEController,
-                decoration: const InputDecoration(
-                  hintText: 'Email',
-                ),validator: (value){
-                  if(value?.isEmpty?? true){
-                    return 'Enter an Email';
-                  }
-              },
-              ),
-              const SizedBox(
-                height: 24,
-              ),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {
-                   Get.to(()=>const VerifyOTPScreen());
-                  },
-                  child: const Text('Next'),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 160,
                 ),
-              ),
-            ],
+                const AppLogo(
+                  height: 90,
+                ),
+                const SizedBox(
+                  height: 24,
+                ),
+                Text(
+                  'Welcome back',
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+                const SizedBox(
+                  height: 4,
+                ),
+                Text(
+                  'Please Enter your Email Address',
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                TextFormField(
+                  controller: _emailTEController,
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: const InputDecoration(
+                    hintText: 'Email',
+                  ),
+                  validator: (String? value) {
+                    if (value?.trim().isEmpty ?? true) {
+                      return 'Eneter an email';
+                    }
+            
+                    bool emailValid = RegExp(
+                        r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$')
+                        .hasMatch(value!);
+                    if (emailValid == false) {
+                      return 'Enter valid Email';
+                    }
+            
+                    return null;
+                  },
+                ),
+                const SizedBox(
+                  height: 24,
+                ),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      if (!_formKey.currentState!.validate()) {
+                        return;
+                      }
+                     Get.to(()=>const VerifyOTPScreen());
+                    },
+                    child: const Text('Next'),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
