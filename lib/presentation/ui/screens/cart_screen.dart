@@ -36,9 +36,9 @@ class _CartScreenState extends State<CartScreen> {
                 child: ListView.separated(
               itemCount: 5,
               itemBuilder: (context, index) {
-                return CardProductItems();
+                return const CardProductItems();
               },
-              separatorBuilder: (_, __) => SizedBox(
+              separatorBuilder: (_, __) => const SizedBox(
                 height: 8,
               ),
             )),
