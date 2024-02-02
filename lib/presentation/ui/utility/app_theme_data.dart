@@ -67,7 +67,7 @@ class AppThemedata {
     appBarTheme: const AppBarTheme(
       color: Colors.white,
       titleTextStyle: TextStyle(color: Colors.black,fontSize: 18),
-      elevation: 5,
+      elevation: 4,
     )
   );
 }
