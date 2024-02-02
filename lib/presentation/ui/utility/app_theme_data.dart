@@ -3,10 +3,7 @@ import 'package:flutter/material.dart';
 
 class AppThemedata {
   static ThemeData lightThemeData = ThemeData(
-    // primarySwatch: MaterialColor(
-    //   AppColors.primaryColor.value,
-    //   AppColors.colorSwatch,
-    // ),
+
     progressIndicatorTheme: const ProgressIndicatorThemeData(
       color: AppColors.primaryColor,
     ),
@@ -67,7 +64,7 @@ class AppThemedata {
     appBarTheme: const AppBarTheme(
       color: Colors.white,
       titleTextStyle: TextStyle(color: Colors.black,fontSize: 18),
-      elevation: 4,
+      elevation: 5,
     )
   );
 }
