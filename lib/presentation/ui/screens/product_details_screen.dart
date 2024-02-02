@@ -207,7 +207,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 ),
               ),
               Text(
-                '\$12000',
+                '\$1000',
                 style: TextStyle(
                   fontSize: 18,
                   color: AppColors.primaryColor,
