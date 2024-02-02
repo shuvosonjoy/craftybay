@@ -123,7 +123,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
             height: 8,
           ),
           const Text(
-            'Introducing the epitome of style and comfort, our cutting-edge shoes seamlessly blend fashion and function. Crafted with precision and passion, each pair reflects a perfect synergy of form and substance. Immerse yourself in unparalleled luxury as you step into a world where every detail is meticulously designed. From the plush insoles to the durable outsoles, our shoes redefine sophistication. Elevate your stride with innovative materials that embrace your feet in a gentle embrace. Whether you\'re navigating city streets or dancing under starlit skies, these shoes are more than footwear—they\'re an expression of your unique journey. Walk confidently, embracing a fusion of elegance and resilience.',
+            'Introducing the epitome of style and comfort, our cutting-edge shoes seamlessly blend fashion and function. Crafted with precision and passion, each pair reflects a perfect synergy of form and substance. Immerse yourself in unparalleled luxury as you step into a world where every detail is meticulously designed. From the plush insoles to the durable outsoles, our shoes redefine sophistication.Whether you\'re navigating city streets or dancing under starlit skies, these shoes are more than footwear—they\'re an expression of your unique journey. Walk confidently, embracing a fusion of elegance and resilience.',
             style: TextStyle(
               color: Colors.grey,
               fontSize: 12,
