@@ -38,7 +38,7 @@ class _CartScreenState extends State<CartScreen> {
               itemBuilder: (context, index) {
                 return const CardProductItems();
               },
-              separatorBuilder: (_, __) => const SizedBox(
+              separatorBuilder: (_, ___) => const SizedBox(
                 height: 8,
               ),
             )),
