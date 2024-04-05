@@ -17,7 +17,7 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     return PopScope(
       canPop: false,
-      onPopInvoked: (_) {
+      onPopInvoked: (_){
         Get.find<MainBottomNavController>().backToHome();
       },
       child: Scaffold(
@@ -38,7 +38,7 @@ class _CartScreenState extends State<CartScreen> {
               itemBuilder: (context, index) {
                 return const CardProductItems();
               },
-              separatorBuilder: (_, ___) => const SizedBox(
+              separatorBuilder: (_,___) => const SizedBox(
                 height: 8,
               ),
             )),
