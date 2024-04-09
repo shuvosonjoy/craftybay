@@ -124,16 +124,18 @@ class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
                   child: GetBuilder<VerifyOtpController>(
                       builder: (verifyOtpController) {
                     return Visibility(
-                      visible: verifyOtpController.inProgress==false,
+                      visible: verifyOtpController.inProgress == false,
                       replacement: CenterCircularProgressIndicator(),
                       child: ElevatedButton(
                         onPressed: () async {
                           if (_formKey.currentState!.validate()) {
-
-                            final response = await verifyOtpController.verifyOTP(
-                                widget.email, _otpTEController.text);
+                            final response = await verifyOtpController
+                                .verifyOTP(widget.email, _otpTEController.text);
                             if (response) {
-                              Get.to(() => const CompleteProfileScreen());
+                              if (verifyOtpController
+                                  .shouldNavigateCompleteProfile) {
+                                Get.to(() => const CompleteProfileScreen());
+                              } else {}
                             } else {
                               Get.showSnackbar(
                                 GetSnackBar(

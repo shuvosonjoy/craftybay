@@ -25,8 +25,17 @@ class VerifyOtpController extends GetxController {
 
     if (response.isSuccess) {
       final token = response.responseData['data'];
-      _shouldNavigateCompleteProfile =
+      final result =
           await Get.find<ReadProfileDataController>().readProfileData(token);
+      if(result){
+        _shouldNavigateCompleteProfile=Get.find<ReadProfileDataController>().isProfileCompleted;
+
+      }
+      else{
+        _errorMessage = Get.find<ReadProfileDataController>().errorMessage;
+        update();
+        return false;
+      }
       update();
       return true;
     } else {
